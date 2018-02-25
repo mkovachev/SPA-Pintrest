@@ -1,32 +1,43 @@
 const sammyApp = Sammy('#app-Container', function () {
     let $appContainer = $('#app-Container');
 
-    this.get('#/home', function () {
-        let events = null;
+    this.get('#/login', () => {
         db.getAll()
-            .then(function (res) {
+            .then(res => {
                 events = res.result;
-                return handlebarsCompiler.compile('home');
+                return handlebarsCompiler.compile('login');
             })
-            .then(function (template) {
+            .then(template => {
                 $appContainer.html(template(events));
             });
     });
 
-    this.get('#/events/:id', function () {
+    this.get('#/home', () => {
+        let events = null;
+        db.getAll()
+            .then(res => {
+                events = res.result;
+                return handlebarsCompiler.compile('home');
+            })
+            .then(template => {
+                $appContainer.html(template(events));
+            });
+    });
+
+    this.get('#/events/:id', () => {
         let event = null;
         db.getById(this.params.id)
-            .then(function (res) {
+            .then(res => {
                 event = res.result;
                 return handlebarsCompiler.compile('event-details');
             })
-            .then(function (template) {
+            .then(template => {
                 $appContainer.html(template(event));
             })
     });
 
 });
 
-$(function () {
+$(() => {
     sammyApp.run('#/home');
 });

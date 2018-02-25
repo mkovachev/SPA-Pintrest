@@ -1,7 +1,7 @@
-const db = (function () {
+const db = ((() => {
 
   function getAll() {
-    const promise = new Promise(function (resolve, reject) {
+    const promise = new Promise((resolve, reject) => {
       resolve({
         result: data.events
       });
@@ -11,8 +11,8 @@ const db = (function () {
 
   function getById(id) {
     id = +id;
-    const promise = new Promise(function (resolve, reject) {
-      for (var i = 0; i < data.events.length; i += 1) {
+    const promise = new Promise((resolve, reject) => {
+      for (let i = 0; i < data.events.length; i += 1) {
         if (data.events[i].id == id) {
           resolve({
             result: data.events[i]
@@ -29,7 +29,7 @@ const db = (function () {
   };
 
   return {
-    getAll: getAll,
-    getById: getById
+    getAll,
+    getById
   };
-})();
+}))();

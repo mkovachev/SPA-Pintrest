@@ -1,8 +1,8 @@
-const handlebarsCompiler = (function () {
+const handlebarsCompiler = ((() => {
   function compile(name) {
-    const promise = new Promise(function (resolve, reject) {
+    const promise = new Promise((resolve, reject) => {
       const url = `public/templates/${name}.handlebars`;
-      $.get(url, function (templateHtml) {
+      $.get(url, templateHtml => {
         const template = Handlebars.compile(templateHtml);
         resolve(template);
       });
@@ -13,4 +13,4 @@ const handlebarsCompiler = (function () {
   return {
     compile
   };
-}());
+})());
