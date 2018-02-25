@@ -1,6 +1,14 @@
 const db = ((() => {
 
-  function getAll() {
+  function login(email, pass) {
+
+  };
+
+  function register(email, pass) {
+
+  };
+
+  function getAllPhotos() {
     const promise = new Promise((resolve, reject) => {
       resolve({
         result: data.events
@@ -9,7 +17,7 @@ const db = ((() => {
     return promise;
   };
 
-  function getById(id) {
+  function getPhotoById(id) {
     id = +id;
     const promise = new Promise((resolve, reject) => {
       for (let i = 0; i < data.events.length; i += 1) {
@@ -29,7 +37,13 @@ const db = ((() => {
   };
 
   return {
-    getAll,
-    getById
+    users: {
+      login,
+      register
+    },
+    photos: {
+      getAllPhotos,
+      getPhotoById
+    }
   };
 }))();

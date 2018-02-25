@@ -23,5 +23,8 @@ const data = {
         "large": "/public/img/imany_large_200_200.jpg"
       }
     }
-  ]
+  ],
+  users: [{
+
+  }]
 };

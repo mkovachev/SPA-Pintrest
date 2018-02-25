@@ -1,8 +1,8 @@
 const sammyApp = Sammy('#app-Container', function () {
     let $appContainer = $('#app-Container');
 
-    this.get('#/login', () => {
-        db.getAll()
+    this.get('#/login', function (context) {
+        db.login()
             .then(res => {
                 events = res.result;
                 return handlebarsCompiler.compile('login');
@@ -16,15 +16,11 @@ const sammyApp = Sammy('#app-Container', function () {
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
-                    $.ajax({
-                        url: 'api/auth',
-                        method: 'PUT',
-                        data: JSON.stringify(user),
-                        contentType: 'application/json',
-                        success: function(user){
-                            console.log(user);
-                        }
-                    });
+
+                    data.users.login(user)
+                        .then((user) => {
+                            context.redirect('#/home');
+                        })
                 });
 
                 // post register
@@ -33,22 +29,14 @@ const sammyApp = Sammy('#app-Container', function () {
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
-                    $.ajax({
-                        url: 'api/users',
-                        method: 'POST',
-                        data: JSON.stringify(user),
-                        contentType: 'application/json',
-                        success: function(user){
-                            console.log(user);
-                        }
-                    });
+
                 });
             });
     });
 
-    this.get('#/home', () => {
+    this.get('#/home', function () {
         let events = null;
-        db.getAll()
+        db.getAllPhotos()
             .then(res => {
                 events = res.result;
                 return handlebarsCompiler.compile('home');
@@ -58,9 +46,9 @@ const sammyApp = Sammy('#app-Container', function () {
             });
     });
 
-    this.get('#/events/:id', () => {
+    this.get('#/events/:id', function () {
         let event = null;
-        db.getById(this.params.id)
+        db.getPhotoById(this.params.id)
             .then(res => {
                 event = res.result;
                 return handlebarsCompiler.compile('event-details');
@@ -72,6 +60,6 @@ const sammyApp = Sammy('#app-Container', function () {
 
 });
 
-$(() => {
+$(function () {
     sammyApp.run('#/home');
 });
