@@ -1,8 +1,6 @@
 const db = ((() => {
 
-  function register(user) {
-
-  };
+  function register(user) {};
 
   function login(user) {
     const promise = new Promise((resolve, reject) => {
@@ -22,9 +20,7 @@ const db = ((() => {
     return promise;
   };
 
-  function logout(user) {
-
-  };
+  function logout(user) {};
 
   function getAllPhotos() {
     const promise = new Promise((resolve, reject) => {
