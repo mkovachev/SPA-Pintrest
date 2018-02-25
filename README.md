@@ -1,18 +1,12 @@
-# EventsApp
-
-SPA JS Telerik Alpha 17
-
-## Team Project – EventsApp
+# Pintrest SPA
 
 ## Short Description
 
-The EventsApp is a simple SPA that manages events and provide services.
+The Pintrest is a simple SPA that manages photos and provide services.
 
 ## Team Members
 
 - Martin Kovachev
-- Alexander Markov
-- Petko Petkov
 
 ### Libraries
 
