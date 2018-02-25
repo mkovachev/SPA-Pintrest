@@ -16,6 +16,15 @@ const sammyApp = Sammy('#app-Container', function () {
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
+                    $.ajax({
+                        url: 'api/auth',
+                        method: 'PUT',
+                        data: JSON.stringify(user),
+                        contentType: 'application/json',
+                        success: function(user){
+                            console.log(user);
+                        }
+                    });
                 });
 
                 // post register
@@ -24,9 +33,14 @@ const sammyApp = Sammy('#app-Container', function () {
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
-
                     $.ajax({
-                        
+                        url: 'api/users',
+                        method: 'POST',
+                        data: JSON.stringify(user),
+                        contentType: 'application/json',
+                        success: function(user){
+                            console.log(user);
+                        }
                     });
                 });
             });
