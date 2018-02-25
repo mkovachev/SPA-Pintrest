@@ -10,19 +10,11 @@
     "license": "MIT",
     "dependencies": {
         "bootstrap": "*",
+        "popper": "*",
         "handlebars": "*",
         "jquery": "*",
-        "popper": "*",
         "sammy": "*",
-        "toastr": "^2.1.4"
+        "toastr": "*"
     },
-    "devDependencies": {
-        "babel-cli": "*",
-        "babel-preset-env": "*"
-    },
-    "babel": {
-        "presets": [
-            "env"
-        ]
-    }
+    "devDependencies": {}
 }
