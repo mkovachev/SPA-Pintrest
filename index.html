@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>EventsApp</title>
+    <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.css">
+</head>
+
+<body>
+    <div id='root'>
+        <header>
+            <nav class="navbar navbar-expand-md sticky-top navbar-light bg-light">
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#/home">EventsApp</a>
+
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+                    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                        <li class="nav-item dropdown categories-menu">
+                            <a class="nav-link dropdown-toggle categories" href="#/categories" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Categories
+                            </a>
+                            <div class="dropdown-menu categories-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item concerts" href="#/concerts">Concerts</a>
+                                <a class="dropdown-item sport" href="#/sport">Sport</a>
+                                <a class="dropdown-item culture" href="#/culture">Culture</a>
+                                <a class="dropdown-item science" href="#/science">Science</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown cities-menu">
+                            <a class="nav-link dropdown-toggle cities" href="#/cities" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Cities
+                            </a>
+                            <div class="dropdown-menu cities-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown artists-menu">
+                            <a class="nav-link dropdown-toggle artists" href="#/artists" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                Artists
+                            </a>
+                            <div class="dropdown-menu artists-dropdown" aria-labelledby="navbarDropdownMenuLink">
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0 search-form">
+                        <input class="form-control mr-sm-2 search-input" type="search" placeholder="Enter event, artist or city" aria-label="Search">
+                        <button class="btn btn-outline-success my-2 my-sm-0 search-btn" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
+        </header>
+        <main id="app-Container"></main>
+    </div>
+
+    <!--libs-->
+    <script src="/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/node_modules/handlebars/dist/handlebars.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <script src="/node_modules/sammy/lib/sammy.js"></script>
+
+    <!-- public/js -->
+    <script src="/public/js/db.js"></script>
+    <script src="/public/js/handlebarsCompiler.js"></script>
+    <script src="/public/js/sammyRouter.js"></script>
+
+    <!-- database -->
+    <script src="/data.js"></script>
+
+</body>
+
+</html>

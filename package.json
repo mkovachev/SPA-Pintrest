@@ -1,0 +1,28 @@
+{
+    "name": "eventsapp",
+    "version": "1.0.0",
+    "description": "all events in one place",
+    "main": "app.js",
+    "scripts": {
+        "start": "live-server"
+    },
+    "author": "Martin Kovachev, Alexander Markov, Petko Petkov",
+    "license": "MIT",
+    "dependencies": {
+        "bootstrap": "*",
+        "handlebars": "*",
+        "jquery": "*",
+        "popper": "*",
+        "sammy": "*",
+        "toastr": "^2.1.4"
+    },
+    "devDependencies": {
+        "babel-cli": "*",
+        "babel-preset-env": "*"
+    },
+    "babel": {
+        "presets": [
+            "env"
+        ]
+    }
+}
