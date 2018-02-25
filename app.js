@@ -1,36 +1,36 @@
-var express = require('express'),
+const express = require('express'),
     app = express();
 
 app.use(express.static('public'));
 
 // register user
-app.post('/api/users', function (req, res) {
+app.post('/api/users', (req, res) => {
     db.users.create(req.body)
-        .then(function (user) {
+        .then(user => {
             user = {
                 username: user.username,
                 authKey: user.authKey
             };
             res.status(201)
                 .json(user);
-        }, function (err) {
+        }, err => {
             res.status(400)
                 .json(err);
         });
 });
 
 // login user
-app.put('/api/login', function (req, res) {
+app.put('/api/login', (req, res) => {
     const query = {
         usernameLower: req.body.username.toLowerCase()
     };
     db.users.find(query)
-        .then(function (users) {
+        .then(users => {
             const user = users[0];
             if (!user || user.passHash !== req.body.passHash) {
                 res.status(404)
                     .json({
-                        err: 'Username or password is invalid'
+                        err: 'Email or password is invalid'
                     });
                 return;
             }
@@ -41,10 +41,13 @@ app.put('/api/login', function (req, res) {
         });
 });
 
+app.get('/', (req, res) => {
+    res.send('Express running...')
+});
 
 // Set Port
 app.set('port', (process.env.PORT || 3000));
 
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), () => {
     console.log('Server started on port ' + app.get('port'));
 });

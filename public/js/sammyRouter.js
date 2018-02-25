@@ -17,7 +17,7 @@ const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
-                    data.users.login(user)
+                    db.users.login(user)
                         .then(user => {
                             context.redirect('#/home');
                         })
@@ -29,7 +29,7 @@ const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
-                    data.users.register(user)
+                    db.users.register(user)
                         .then(user => {
                             context.redirect('#/home');
                         })
