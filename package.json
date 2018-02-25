@@ -9,6 +9,7 @@
     "author": "Martin Kovachev, Alexander Markov, Petko Petkov",
     "license": "MIT",
     "dependencies": {
+        "express": "*",
         "bootstrap": "*",
         "popper": "*",
         "handlebars": "*",

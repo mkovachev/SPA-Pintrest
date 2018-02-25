@@ -1,5 +1,5 @@
 const data = {
-  events: [{
+  photos: [{
       "id": 1,
       "title": "Adele",
       "date": "03.03.2018",

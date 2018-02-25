@@ -25,7 +25,7 @@ const db = ((() => {
   function getAllPhotos() {
     const promise = new Promise((resolve, reject) => {
       resolve({
-        result: data.events
+        result: data.photos
       });
     });
     return promise;
@@ -34,10 +34,10 @@ const db = ((() => {
   function getPhotoById(id) {
     id = +id;
     const promise = new Promise((resolve, reject) => {
-      for (let i = 0; i < data.events.length; i += 1) {
-        if (data.events[i].id == id) {
+      for (let i = 0; i < data.photos.length; i += 1) {
+        if (data.photos[i].id == id) {
           resolve({
-            result: data.events[i]
+            result: data.photos[i]
           });
           return;
         }

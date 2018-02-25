@@ -39,26 +39,26 @@ const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
 
 
     this.get('#/home', () => {
-        let events = null;
+        let photos = null;
         db.photos.getAllPhotos()
             .then(res => {
-                events = res.result;
+                photos = res.result;
                 return handlebarsCompiler.compile('home');
             })
             .then(template => {
-                $appContainer.html(template(events));
+                $appContainer.html(template(photos));
             });
     });
 
     this.get('#/events/:id', function () { // es6 not working here!
-        let event = null;
+        let photo = null;
         db.photos.getPhotoById(this.params.id)
             .then(res => {
-                event = res.result;
+                photo = res.result;
                 return handlebarsCompiler.compile('photo-details');
             })
             .then(template => {
-                $appContainer.html(template(event));
+                $appContainer.html(template(photo));
             })
     });
 
