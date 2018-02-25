@@ -1,4 +1,4 @@
-const sammyApp = Sammy('#app-Container', function () {
+const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
     let $appContainer = $('#app-Container');
 
 
@@ -11,26 +11,28 @@ const sammyApp = Sammy('#app-Container', function () {
             .then(template => {
                 $appContainer.html(template(events));
 
-                // put login
+                // login
                 $('#btn-login').on('click', () => {
                     const user = {
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
-
                     data.users.login(user)
-                        .then((user) => {
+                        .then(user => {
                             context.redirect('#/home');
                         })
                 });
 
-                // post register
+                // register
                 $('#btn-register').on('click', () => {
                     const user = {
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
-
+                    data.users.register(user)
+                        .then(user => {
+                            context.redirect('#/home');
+                        })
                 });
             });
     });
@@ -48,12 +50,12 @@ const sammyApp = Sammy('#app-Container', function () {
             });
     });
 
-    this.get('#/events/:id', function () {
+    this.get('#/events/:id', function () { // es6 not working here!
         let event = null;
         db.photos.getPhotoById(this.params.id)
             .then(res => {
                 event = res.result;
-                return handlebarsCompiler.compile('event-details');
+                return handlebarsCompiler.compile('photo-details');
             })
             .then(template => {
                 $appContainer.html(template(event));

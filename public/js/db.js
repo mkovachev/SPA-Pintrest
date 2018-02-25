@@ -1,10 +1,24 @@
 const db = ((() => {
 
-  function login(email, pass) {
-
+  function login(user) {
+    const promise = new Promise((resolve, reject) => {
+      $.ajax({
+        url: 'api/login',
+        method: 'PUT',
+        data: JSON.stringify(user),
+        contentType: 'application/json',
+        success: user => {
+          resolve(user);
+        },
+        error: () => {
+          reject('user not registered')
+        }
+      })
+    });
+    return promise;
   };
 
-  function register(email, pass) {
+  function register(user) {
 
   };
 
