@@ -1,5 +1,9 @@
 const db = ((() => {
 
+  function register(user) {
+
+  };
+
   function login(user) {
     const promise = new Promise((resolve, reject) => {
       $.ajax({
@@ -18,7 +22,7 @@ const db = ((() => {
     return promise;
   };
 
-  function register(user) {
+  function logout(user) {
 
   };
 
