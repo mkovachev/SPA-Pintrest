@@ -20,10 +20,14 @@ const sammyApp = Sammy('#app-Container', function () {
 
                 // post register
                 $('#btn-register').on('click', () => {
-                    const newUser = {
+                    const user = {
                         email: $('#email').val(),
                         passHash: $('#password').val()
                     };
+
+                    $.ajax({
+                        
+                    });
                 });
             });
     });
