@@ -1,8 +1,8 @@
 const sammyApp = Sammy('#app-Container', function () {
     let $appContainer = $('#app-Container');
 
-    this.get('#/login', function (context) {
-        db.login()
+    this.get('#/login', context => {
+        db.user.login()
             .then(res => {
                 events = res.result;
                 return handlebarsCompiler.compile('login');
@@ -34,9 +34,9 @@ const sammyApp = Sammy('#app-Container', function () {
             });
     });
 
-    this.get('#/home', function () {
+    this.get('#/home', () => {
         let events = null;
-        db.getAllPhotos()
+        db.photos.getAllPhotos()
             .then(res => {
                 events = res.result;
                 return handlebarsCompiler.compile('home');
@@ -48,7 +48,7 @@ const sammyApp = Sammy('#app-Container', function () {
 
     this.get('#/events/:id', function () {
         let event = null;
-        db.getPhotoById(this.params.id)
+        db.photos.getPhotoById(this.params.id)
             .then(res => {
                 event = res.result;
                 return handlebarsCompiler.compile('event-details');
@@ -60,6 +60,6 @@ const sammyApp = Sammy('#app-Container', function () {
 
 });
 
-$(function () {
+$(() => {
     sammyApp.run('#/home');
 });

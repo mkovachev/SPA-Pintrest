@@ -37,7 +37,7 @@ const db = ((() => {
   };
 
   return {
-    users: {
+    user: {
       login,
       register
     },
