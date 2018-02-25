@@ -9,6 +9,22 @@ const sammyApp = Sammy('#app-Container', function () {
             })
             .then(template => {
                 $appContainer.html(template(events));
+
+                // put login
+                $('#btn-login').on('click', () => {
+                    const user = {
+                        email: $('#email').val(),
+                        passHash: $('#password').val()
+                    };
+                });
+
+                // post register
+                $('#btn-register').on('click', () => {
+                    const newUser = {
+                        email: $('#email').val(),
+                        passHash: $('#password').val()
+                    };
+                });
             });
     });
 
