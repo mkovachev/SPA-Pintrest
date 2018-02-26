@@ -34,15 +34,16 @@ const db = ((() => {
   function login(user) {
     const promise = new Promise((resolve, reject) => {
       $.ajax({
-        url: 'api/login',
-        method: 'PUT',
+        url: '/#/login',
+        method: 'GET',
         data: JSON.stringify(user),
         contentType: 'application/json',
         success: user => {
           resolve(user);
         },
         error: () => {
-          reject('user not registered')
+          toastr.error('User not registered!');
+          reject('User not registered!')
         }
       })
     });

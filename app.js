@@ -3,52 +3,52 @@ const express = require('express'),
 
 app.use(express.static('public'));
 
-app.get('/home', (req, res) => {
+app.get('/api/home', (req, res) => {
     res.send('Express running...')
 });
 
 //#region login/register
-// register user
-// app.post('/api/users', (req, res) => {
-//     db.users.create(req.body)
-//         .then(user => {
-//             user = {
-//                 username: user.username,
-//                 authKey: user.authKey
-//             };
-//             res.status(201)
-//                 .json(user);
-//         }, err => {
-//             res.status(400)
-//                 .json(err);
-//         });
-// });
+//register user
+app.post('/api/users', (req, res) => {
+    db.users.create(req.body)
+        .then(user => {
+            user = {
+                username: user.username,
+                authKey: user.authKey
+            };
+            res.status(201)
+                .json(user);
+        }, err => {
+            res.status(400)
+                .json(err);
+        });
+});
 
 // login user
-// app.put('/api/login', (req, res) => {
-//     const query = {
-//         usernameLower: req.body.username.toLowerCase()
-//     };
-//     db.users.find(query)
-//         .then(users => {
-//             const user = users[0];
-//             if (!user || user.passHash !== req.body.passHash) {
-//                 res.status(404)
-//                     .json({
-//                         err: 'Email or password is invalid'
-//                     });
-//                 return;
-//             }
-//             res.json({
-//                 username: user.username,
-//                 authKey: user.authKey
-//             });
-//         });
-// });
+app.put('/api/login', (req, res) => {
+    const query = {
+        usernameLower: req.body.username.toLowerCase()
+    };
+    db.users.find(query)
+        .then(users => {
+            const user = users[0];
+            if (!user || user.passHash !== req.body.passHash) {
+                res.status(404)
+                    .json({
+                        err: 'Email or password is invalid'
+                    });
+                return;
+            }
+            res.json({
+                username: user.username,
+                authKey: user.authKey
+            });
+        });
+});
 //#endregion
 
 // Set Port
-app.set('port', (process.env.PORT || 3000));
+app.set('port', (process.env.PORT || 8080));
 
 app.listen(app.get('port'), () => {
     console.log('Server started on port ' + app.get('port'));

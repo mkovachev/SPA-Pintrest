@@ -25,6 +25,13 @@ const data = {
     }
   ],
   users: [{
-
-  }]
+      "email": "",
+      "pass": ""
+    },
+    {
+      "id": 1,
+      "email": "test@gmail.com",
+      "pass": "test"
+    }
+  ]
 };
