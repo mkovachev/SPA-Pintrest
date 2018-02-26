@@ -1,27 +1,5 @@
 const db = ((() => {
 
-  function register(user) {};
-
-  function login(user) {
-    const promise = new Promise((resolve, reject) => {
-      $.ajax({
-        url: 'api/login',
-        method: 'PUT',
-        data: JSON.stringify(user),
-        contentType: 'application/json',
-        success: user => {
-          resolve(user);
-        },
-        error: () => {
-          reject('user not registered')
-        }
-      })
-    });
-    return promise;
-  };
-
-  function logout(user) {};
-
   function getAllPhotos() {
     const promise = new Promise((resolve, reject) => {
       resolve({
@@ -50,10 +28,36 @@ const db = ((() => {
     return promise;
   };
 
+  // #region login/register
+  function register(user) {};
+
+  function login(user) {
+    const promise = new Promise((resolve, reject) => {
+      $.ajax({
+        url: 'api/login',
+        method: 'PUT',
+        data: JSON.stringify(user),
+        contentType: 'application/json',
+        success: user => {
+          resolve(user);
+        },
+        error: () => {
+          reject('user not registered')
+        }
+      })
+    });
+    return promise;
+  };
+
+  function logout(user) {};
+  // #endregion
+
   return {
     user: {
+      register,
       login,
-      register
+      logout
+
     },
     photos: {
       getAllPhotos,

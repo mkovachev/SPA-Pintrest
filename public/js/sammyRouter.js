@@ -2,16 +2,16 @@ const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
     let $appContainer = $('#app-Container');
 
 
-    this.get('#/login', context => {
+    this.get('#/login', () => {
         db.user.login()
             .then(res => {
-                events = res.result;
+                login = res.result;
                 return handlebarsCompiler.compile('login');
             })
             .then(template => {
-                $appContainer.html(template(events));
+                $appContainer.html(template(login));
 
-                // login
+                // login - submit data
                 $('#btn-login').on('click', () => {
                     const user = {
                         email: $('#email').val(),
@@ -23,7 +23,7 @@ const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
                         })
                 });
 
-                // register
+                // register - submit data
                 $('#btn-register').on('click', () => {
                     const user = {
                         email: $('#email').val(),
@@ -36,7 +36,6 @@ const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
                 });
             });
     });
-
 
     this.get('#/home', () => {
         let photos = null;

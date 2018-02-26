@@ -9,11 +9,12 @@
     "author": "Martin Kovachev, Alexander Markov, Petko Petkov",
     "license": "MIT",
     "dependencies": {
-        "express": "*",
         "bootstrap": "*",
-        "popper": "*",
+        "express": "*",
         "handlebars": "*",
         "jquery": "*",
+        "page": "*",
+        "popper": "*",
         "sammy": "*",
         "toastr": "*"
     },

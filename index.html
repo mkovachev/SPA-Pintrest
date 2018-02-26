@@ -46,10 +46,30 @@
     <script src="/public/js/db.js"></script>
     <script src="/public/js/handlebarsCompiler.js"></script>
     <script src="/public/js/sammyRouter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.8.3/page.js"></script>
 
     <!-- database -->
     <script src="/data.js"></script>
 
+    <!-- <script src="/node_modules/page/page.js"></script>
+    <base href="/">
+    <script>
+        page.base('/');
+
+        page('#/home', home);
+
+        function home() {
+            let photos = null;
+            db.photos.getAllPhotos()
+                .then(function (res) {
+                    photos = res.result;
+                    return handlebarsCompiler.compile('home');
+                })
+                .then(function (template) {
+                    $appContainer.html(template(photos));
+                });
+        };
+    </script> -->
 </body>
 
 </html>
