@@ -1,6 +1,7 @@
 const data = {
   photos: [{
       "id": 1,
+      "author": "Camela",
       "title": "Adele",
       "date": "03.03.2018",
       "city": "Sofia",
@@ -14,6 +15,7 @@ const data = {
     {
       "id": 2,
       "title": "Imany",
+      "author": "Picasso",
       "date": "10.03.2018",
       "city": "Plovdiv",
       "category": "Music",
