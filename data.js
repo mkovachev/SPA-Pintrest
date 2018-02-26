@@ -2,28 +2,42 @@ const data = {
   photos: [{
       "id": 1,
       "author": "Camela",
-      "title": "Adele",
-      "date": "03.03.2018",
-      "city": "Sofia",
-      "category": "Music",
-      "description": "Adele live in Sofia",
-      "image": {
-        "thumbnail": "/public/img/adele_small_140_186.jpg",
-        "large": "/public/img/adele_large_200_200.jpg"
-      }
+      "title": "Adele"
     },
     {
       "id": 2,
+      "title": "Day",
+      "author": "Pierro"
+    },
+    {
+      "id": 3,
+      "title": "Nature",
+      "author": "Cravelina"
+    },
+    {
+      "id": 4,
+      "title": "Water",
+      "author": "Picasso"
+    },
+    {
+      "id": 5,
       "title": "Imany",
-      "author": "Picasso",
-      "date": "10.03.2018",
-      "city": "Plovdiv",
-      "category": "Music",
-      "description": "Imany live in Plovdiv",
-      "image": {
-        "thumbnail": "/public/img/imany_small_140_186.jpg",
-        "large": "/public/img/imany_large_200_200.jpg"
-      }
+      "author": "Picasso"
+    },
+    {
+      "id": 6,
+      "title": "Sea",
+      "author": "Relena"
+    },
+    {
+      "id": 7,
+      "title": "Forest",
+      "author": "Loana"
+    },
+    {
+      "id": 8,
+      "title": "Summer",
+      "author": "P.C."
     }
   ],
   users: [{

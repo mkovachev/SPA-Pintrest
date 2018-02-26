@@ -54,25 +54,6 @@
     <!-- database -->
     <script src="/data.js"></script>
 
-    <!-- <script src="/node_modules/page/page.js"></script>
-    <base href="/">
-    <script>
-        page.base('/');
-
-        page('#/home', home);
-
-        function home() {
-            let photos = null;
-            db.photos.getAllPhotos()
-                .then(function (res) {
-                    photos = res.result;
-                    return handlebarsCompiler.compile('home');
-                })
-                .then(function (template) {
-                    $appContainer.html(template(photos));
-                });
-        };
-    </script> -->
 </body>
 
 </html>

@@ -49,7 +49,7 @@ const sammyApp = Sammy('#app-Container', function () { // es6 not working here!
             });
     });
 
-    this.get('#/events/:id', function () { // es6 not working here!
+    this.get('#/photos/:id', function () { // es6 not working here!
         let photo = null;
         db.photos.getPhotoById(this.params.id)
             .then(res => {
