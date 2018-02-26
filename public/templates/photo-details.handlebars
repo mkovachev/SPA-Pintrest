@@ -1,10 +1,11 @@
-<div class="jumbotron"> ​
-    <picture>
-        <img class="rounded" <img src="https://picsum.photos/600/300/?random&giud=@({{id}})" class="img-responsive">
+<div class="card">
+  <h5 class="card-header">Author: {{author}}</h5>
+  <div class="card-body">
+      <picture>
+        <img class="rounded" src="https://picsum.photos/300/200/?random&giud=@({{id}})" class="img-responsive">
     </picture>
-    <h1>{{title}}</h1>
-    <h6>Date: {{date}}</h6>
-    <h6>City: {{city}}</h6>
-    <h6>Category: {{category}}</h6>
-    <p>Description: {{description}}</p>
+    <h4 class="card-title">{{title}}</h4>
+    <p class="card-text">{{description}}</p>
+    <a href="#" class="btn btn-info">Add to Favorite</a>
+  </div>
 </div>

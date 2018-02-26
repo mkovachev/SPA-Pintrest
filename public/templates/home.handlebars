@@ -1,13 +1,30 @@
 <div class="row">
     {{#this}}
-    <div class="col">
-        <a href="#/events/{{id}}">
-            <img class="rounded" <img src="https://picsum.photos/300/300/?random&giud=@({{id}})" class="img-responsive">
-        </a>
-        <h1>{{title}}</h1>
-        <p>Date: {{date}}</p>
-        <p>City: {{city}}</p>
-        <p>Category: {{category}}</p>
+    <div class="card border-info mb-3" style="max-width: 26rem;">
+        <div class="card-header">{{title}}</div>
+        <div class="card-body text-info">
+            <a href="#/events/{{id}}">
+                <img class="rounded" src="https://picsum.photos/150/200/?random&giud=@({{id}})" class="img-responsive">
+            </a>
+            <p class="card-text">Author: {{author}}</p>
+            <p class="card-text">Date: {{date}}</p>
+            <p class="card-text">City: {{city}}</p>
+            <p class="card-text">Category: {{category}}</p>
+        </div>
+    </div>
+    {{/this}}
+</div>
+<div class="row">
+    {{#this}}
+    <div class="card text-white bg-info mb-3" style="max-width: 18rem;">
+        <div class="card-header">{{title}}</div>
+        <div class="card-body">
+            <a href="#/events/{{id}}">
+                <img class="rounded" src="https://picsum.photos/250/250/?random&giud=@({{id}})" class="img-responsive">
+            </a>
+            <h5 class="card-title">Author:{{author}}</h5>
+            <p class="card-text">City: {{city}}</p>
+        </div>
     </div>
     {{/this}}
 </div>
