@@ -1,15 +1,17 @@
-<div class="row">
-    {{#this}}
-    <div class="card border-info mb-3 nopadding" style="max-width: 18rem;">
-        <div class="card-body text-info">
-            <a href="#/photos/{{id}}">
-                <img class="rounded" src="https://picsum.photos/250/300/?random&giud=@({{id}})" class="img-responsive">
-            </a>
-            <span class="card-title">
-                <h4>{{title}}</h4>
-            </span>
-            <spanlass="card-text">by: {{author}}</span>
+<section class="portfolio" id="portfolio">
+    <div class="container-fluid">
+        <div class="row">
+            {{#this}}
+            <div class="gallery_product col-sm-3 col-xs-6 filter">
+                <a class="fancybox" rel="ligthbox" href="https://picsum.photos/800/600??random&giud=@({{id}})">
+                    <img class="img-responsive" src="https://picsum.photos/800/350/?random&giud=@({{id}})" />
+                    <div class='img-info'>
+                        <h4>{{title}}</h4>
+                        <p>author: {{author}}</p>
+                    </div>
+                </a>
+            </div>
+            {{/this}}
         </div>
     </div>
-    {{/this}}
-</div>
+</section>
