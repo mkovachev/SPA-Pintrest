@@ -13,7 +13,6 @@
         "express": "*",
         "handlebars": "*",
         "jquery": "*",
-        "page": "*",
         "popper": "*",
         "sammy": "*",
         "toastr": "*"
