@@ -12,7 +12,9 @@ The Pintrest is a simple SPA that manages photos and provide services.
 
 - JQUERY
 - Boostrap 4
+- Handlebars
 - Sammy
+- Toastr
 
 #### How to start application
 
