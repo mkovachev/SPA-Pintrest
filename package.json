@@ -6,7 +6,7 @@
     "scripts": {
         "start": "live-server"
     },
-    "author": "Martin Kovachev, Alexander Markov, Petko Petkov",
+    "author": "Martin Kovachev",
     "license": "MIT",
     "dependencies": {
         "bootstrap": "*",
